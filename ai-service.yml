@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: ai-service
+  
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:admin}
+    password: ${RABBITMQ_PASSWORD:password}
+
+server:
+  port: 8084
+
+# Google Gemini AI Configuration
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:your-api-key}
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent
+
+# RabbitMQ Queue Configuration
+rabbitmq:
+  queue:
+    activity-analysis: activity-analysis-queue
+  exchange:
+    activity: activity-exchange
+  routing-key:
+    activity-analysis: activity.analysis
+
+logging:
+  level:
+    com.fitness.aiservice: DEBUG

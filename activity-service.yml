@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: activity-service
+  
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/fitnessdb}
+      database: ${MONGODB_DATABASE:fitnessdb}
+  
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:admin}
+    password: ${RABBITMQ_PASSWORD:password}
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8080/realms/fitness-tracker}
+
+server:
+  port: 8083
+
+# RabbitMQ Queue Configuration
+rabbitmq:
+  queue:
+    activity-analysis: activity-analysis-queue
+  exchange:
+    activity: activity-exchange
+  routing-key:
+    activity-analysis: activity.analysis
+
+logging:
+  level:
+    com.fitness.activityservice: DEBUG
