@@ -19,11 +19,11 @@ gemini:
 
 # RabbitMQ Queue Configuration
 rabbitmq:
-  queue:
-    activity-analysis: activity-analysis-queue
-  exchange:
-    activity: activity-exchange
-  routing-key:
+  queues:
+    name: activity-analysis-queue
+  exchanges:
+    name: activity-exchange
+  routing-keys:
     activity-analysis: activity.analysis
 
 logging:
