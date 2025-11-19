@@ -26,10 +26,10 @@ rabbitmq:
   routing-keys:
     activity-analysis: activity.analysis
     
-# Flat properties for @Value injection
-rabbitmq.queues.name: activity-analysis-queue
+# Flat properties for @Value injection (matching Java @Value annotations)
+rabbitmq.queue.name: activity-analysis-queue
 rabbitmq.exchanges.name: activity-exchange
-rabbitmq.routing-keys.activity-analysis: activity.analysis
+rabbitmq.routing.key: activity.analysis
 
 logging:
   level:
