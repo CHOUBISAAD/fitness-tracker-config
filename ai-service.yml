@@ -25,6 +25,11 @@ rabbitmq:
     name: activity-exchange
   routing-keys:
     activity-analysis: activity.analysis
+    
+# Flat properties for @Value injection
+rabbitmq.queues.name: activity-analysis-queue
+rabbitmq.exchanges.name: activity-exchange
+rabbitmq.routing-keys.activity-analysis: activity.analysis
 
 logging:
   level:
