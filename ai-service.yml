@@ -2,6 +2,10 @@ spring:
   application:
     name: ai-service
   
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/fitnessdb}
+  
   rabbitmq:
     host: ${RABBITMQ_HOST:localhost}
     port: ${RABBITMQ_PORT:5672}
