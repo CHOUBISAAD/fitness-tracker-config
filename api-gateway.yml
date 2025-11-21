@@ -22,7 +22,7 @@ spring:
         - id: ai-service
           uri: lb://ai-service
           predicates:
-            - Path=/api/ai/**
+            - Path=/api/recommendations/**
           filters:
             - StripPrefix=1
       
